@@ -1,1 +1,1 @@
-# lectorium-gateway
+# Lectorium Gateway

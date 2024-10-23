@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Nginx",
+            "type": "shell",
+            "command": "nginx",
+            "args": [
+                "-c",
+                "/akd-studios/lectorium/services/gateway/envs/dev/_root.conf",
+                "-g",
+                "'daemon off;'"
+            ],
+            "detail": "Starts the Nginx server",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "icon": {
+                "id": "run",
+                "color": "terminal.ansiGreen",
+            },
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+            }
+        },
+        {
+            "label": "Reload Nginx",
+            "type": "shell",
+            "command": "nginx -s reload",
+            "detail": "Reloads the Nginx configuration",
+            "group": "none",
+            "icon": {
+                "id": "sync",
+                "color": "terminal.ansiYellow",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+            }
+        },
+        {
+            "label": "Stop Nginx",
+            "type": "shell",
+            "command": "nginx -s quit",
+            "detail": "Stops the Nginx server",
+            "group": "none",
+            "icon": {
+                "id": "stop",
+                "color": "terminal.ansiRed",
+            },
+        }
+    ]
+}

@@ -8,4 +8,4 @@ WORKDIR /akd-studios/lectorium/services/gateway
 COPY . .
 
 # Run nginx
-CMD ["nginx", "-c", "/akd-studios/lectorium/services/gateway/lectorium-root.conf", "-g", "daemon off;"]
+CMD ["nginx", "-c", "/akd-studios/lectorium/services/gateway/envs/dev/_root.conf", "-g", "daemon off;"]

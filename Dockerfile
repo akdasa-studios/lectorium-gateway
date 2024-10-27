@@ -1,11 +1,21 @@
 FROM nginx:1.27.0-bookworm
+
+# ---------------------------------------------------------------------------- #
+#                                   Metadata                                   #
+# ---------------------------------------------------------------------------- #
+
 LABEL org.opencontainers.image.description="Gateway for the Lectorium project"
 LABEL org.opencontainers.image.source="https://github.com/akdasa-studios/lectorium"
 
+# ---------------------------------------------------------------------------- #
+#                                     Build                                    #
+# ---------------------------------------------------------------------------- #
 
-# Copy the nginx configuration files
 WORKDIR /akd-studios/lectorium/services/gateway
 COPY . .
 
-# Run nginx
+# ---------------------------------------------------------------------------- #
+#                                      Run                                     #
+# ---------------------------------------------------------------------------- #
+
 CMD ["nginx", "-c", "/akd-studios/lectorium/services/gateway/envs/dev/_root.conf", "-g", "daemon off;"]

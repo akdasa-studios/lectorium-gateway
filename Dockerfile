@@ -1,4 +1,4 @@
-FROM nginx:1.27.0-bookworm
+FROM nginx:1.27.2-bookworm
 
 # ---------------------------------------------------------------------------- #
 #                                   Metadata                                   #
@@ -11,6 +11,7 @@ LABEL org.opencontainers.image.source="https://github.com/akdasa-studios/lectori
 #                                     Build                                    #
 # ---------------------------------------------------------------------------- #
 
+RUN apt update && apt install -y libjwt-dev libjansson-dev
 WORKDIR /akd-studios/lectorium/services/gateway
 COPY . .
 
